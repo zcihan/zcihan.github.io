@@ -1,0 +1,86 @@
+html {
+    font-size: 16px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding: 2rem;
+    background-color: #222;
+}
+
+/* 置顶导航 sticky */
+.sticky-nav {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: #ffffff;
+    padding: 1rem;
+    z-index: 999;
+    margin-bottom: 2rem;
+}
+
+.sticky-nav button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    background: #000;
+    color: white;
+    border-radius: 4px;
+}
+
+/* ✅ 外层Grid！！这一行是你丢失的关键 */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+/* 卡片内部 flex（得分点） */
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.card-text {
+    padding: 1.5rem;
+    width: 100%;
+}
+.card-text h2 {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+}
+.card-text p {
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+}
+.card-text ul {
+    padding-left: 2rem;
+    font-size: 1rem;
+}
+
+/* 移动端720px以内，变成1列 */
+@media (max-width: 720px) {
+    html {
+        font-size: 12px;
+    }
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+}
